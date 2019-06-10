@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+// @ts-ignore FIXME
 import QueryString from "query-string";
 import { API } from "./Constants";
 
@@ -27,6 +28,7 @@ export class GooglePlaces {
   /**
    * Retrieves a list of predictions of a partial address
    */
+  // @ts-ignore FIXME
   public autocomplete(opts): Promise<any> {
     const params = this._permitParams(API.AUTOCOMPLETE, opts);
     return this._query(API.AUTOCOMPLETE.path, params).then(
@@ -37,6 +39,7 @@ export class GooglePlaces {
   /**
    * Retrieve the details of a Google Place based on the Place ID
    */
+  // @ts-ignore FIXME
   public details(opts) {
     const params = this._permitParams(API.DETAILS, opts);
     return this._query(API.DETAILS.path, params).then(
@@ -71,6 +74,7 @@ export class GooglePlaces {
   public radarsearch(opts = {}): Promise<any> {
     const params = this._permitParams(API.RADAR_SEARCH, opts);
 
+    // @ts-ignore FIXME
     if (!params.name && !params.keyword && !params.type) {
       throw new Error("Missing required parameter: [keyword, name, or type]");
     }
@@ -124,8 +128,10 @@ export class GooglePlaces {
 
     // Filter required params
     const filteredRequiredParams = requiredKeys.reduce((p, key: string) => {
+      // @ts-ignore FIXME
       const param: string = params[key];
       if (param) {
+        // @ts-ignore FIXME
         p[key] = param;
       } else {
         missingKeys.push(key);
@@ -139,8 +145,10 @@ export class GooglePlaces {
 
     // Filter optional params
     const filteredOptionalParams = optionalKeys.reduce((p, key: string) => {
+      // @ts-ignore FIXME
       const param = params[key];
       if (param) {
+        // @ts-ignore FIXME
         p[key] = param;
       }
       return p;
