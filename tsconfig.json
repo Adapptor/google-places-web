@@ -1,13 +1,27 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "module": "commonjs",
     "removeComments": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
     "noImplicitAny": true,
+    "baseUrl": "src",
+    "strictNullChecks": true,
     "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES5",
-    "inlineSourceMap": true,
-    "declarationDir": "dist"
+    "keyofStringsOnly": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "target": "es6",
+    "declarationDir": "dist",
+    "types": ["node"],
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "noUnusedParameters": true,
+    "downlevelIteration": true,
+    "rootDir": "src"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
